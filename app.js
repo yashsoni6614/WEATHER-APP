@@ -14,6 +14,8 @@ let dayBlock = document.querySelector(".yearDay .day")
 let humidityBlock = document.querySelector(".humidity")
 let popCities = document.querySelector(".recentSearches")
 let video = document.getElementById("backgroundVideo")
+let dayNightBtn = document.querySelectorAll(".toggleLight .child");
+
 const directions = ['North', 'North East', 'East', 'South East', 'South', 'South West', 'West', 'North West'];
 let countryCode;
 const dateNames = [
@@ -67,7 +69,20 @@ function getVideoPath (desc) {
    
 }
 
+function loadVideo(videoPath) {
+    video.style.opacity = 0;
+    console.log("Hi i am running")
+    setTimeout(()=>{
+        video.setAttribute("src",videoPath);
+        video.style.opacity = 1;
+    },1000)
+}
 
+
+//Imma do some work in here for later 
+// dayNightBtn.addEventListener("click",()=>{
+
+// })
 
 
 // i have to make the map object first here 
@@ -94,7 +109,7 @@ let getLocalTime = async () => {
         let lat = pos.coords.latitude
         let lon = pos.coords.longitude
         await chartFunc(lat, lon)
-        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=5677107a89cab225ea0b9e92f6496b4e&units=metric`
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=5677107a89cab225ea0b9e92f6496b4e&units=metric` //ik ur able to see my api key so dont fuck this up plzzz :(
         let response = await fetch(url);
         let data = await response.json();
         console.log("hello")
@@ -107,7 +122,7 @@ let getLocalTime = async () => {
         let desc = data.weather[0].description;
         let videoPath = getVideoPath(desc.toLowerCase());
         //now i have to utilize the video path in here  and then make the use out of this thing inhere 
-        video.setAttribute("src",videoPath);
+        loadVideo(videoPath)
         if (minTemp == maxTemp) {
             maxTemp += 0.8;
             maxTemp = maxTemp.toFixed(2);
@@ -163,7 +178,7 @@ let getLocalTime = async () => {
         dayBlock.innerHTML = dateNames[date.getDay()];
     }
     catch (e) {
-        console.log(e)
+        alert("Please provide the location access to this page")
     }
 
 }
@@ -204,7 +219,6 @@ let setList = async (countryCode) => {
     });
     loadingscr.remove();
 }
-
 
 
 
@@ -361,7 +375,7 @@ let displayTemp = async (lat, lon, addressData) => {
     let desc = data.weather[0].description;
     let videoPath = getVideoPath(desc.toLowerCase());
     //now i have to utilize the video path in here  and then make the use out of this thing inhere 
-    video.setAttribute("src",videoPath);
+    loadVideo(videoPath);
     if (minTemp == maxTemp) {
         maxTemp += 0.8;
         maxTemp = maxTemp.toFixed(2);
