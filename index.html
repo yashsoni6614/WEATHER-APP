@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body >
+    <video src="" id="backgroundVideo" autoplay muted loop playsinLine></video>
+    <div class="content">
+     <div class="header">
+        <h1 class="appname">WEATHER APP</h1>
+        <div class="timeBlock"></div>
+        <div class="toggleLight">           
+            <button class="day child"><img src="img/dark-mode.svg" alt="" class="darkMode"></button>
+            <button class="night child"><img src="img/day-mode.svg" alt="" class="dayMode"></button>
+        </div>
+        <div class="dateBlock">
+            <div class="date"></div>
+            <div class="yearDay">
+                <span class="year">2025</span>
+                <span class="day">Friday</span>
+            </div>
+        </div>
+        <div class="Links">
+            <div class="LinksHeader">
+                My Links
+            </div>
+            <div class="LinksIcons">
+                <a href="www.google.com" class="github"><img src="img/github-black.svg" width="50%"></a>
+                <a href="#" class="linkedIn"><img src="img/linkedIn-black.svg" alt="" width="75%"></a>
+                <a href="#" class="discord"><img src="img/discord-black.svg" alt="" width="67%"></a>
+            </div>
+        </div>
+    </div>
+    <div class="baseBody">
+        <div class="leftCard">
+            <div class="upperChild">
+                <div class="tempCard">
+                    <div class="temp"></div>
+                    <div class="highLow">
+                        <span class="high">H<span class="HighNotation"></span></span>
+                        <span class="low">L<span class="LowNotation"></span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="lowerChild">
+                <form class="input-form">
+                    <input type="text" placeholder="Enter your city" id="input">
+                    <button type="submit" class="input-button" >ENTER</button>
+                </form>
+                <div id="map"></div>
+            </div>
+        </div>
+        <div class="middleCard">
+            <div class="upperChild">
+                <div class="upperLine"></div>
+                <div class="lowerLine"><div class="leftPart"></div><div class="rightPart"></div></div>
+            </div>
+            <canvas id="tempChart"></canvas>
+        </div>
+        <div class="rightCard">
+            <div class="upperChild">with real data and advanced technology,
+                we provide reliable forecast for any location around the world
+            </div>
+            <div class="lowerChild">
+              
+                <div class="humidity"><img src="img/humidity.svg" alt=""></div>
+                <ul class="recentSearches">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="bg-cover"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

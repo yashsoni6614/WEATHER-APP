@@ -1,0 +1,477 @@
+:root {
+  --bg-color: white;
+  --text-color: black;
+  --border-color: black;
+}
+
+body.dark {
+  --bg-color: black;
+  --text-color: white;
+  --border-color: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+
+}
+
+.content
+{
+    width: 100%;
+    height: 100%;
+}
+
+#backgroundVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: -2; /* keeps it behind all content */
+  opacity: 0.9; /* optional: makes it slightly dim */
+  filter: blur(1);
+  backdrop-filter:blur(30px);
+}
+body {
+    background-color: var(--bg-color);
+    color:var(--text-color);
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    transition: all 1s ease;
+    overflow: auto;
+    min-width: 1000px; 
+    min-height: 700px; 
+
+}
+
+.header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 222;
+    flex-shrink: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    color: var(--text-color);
+    justify-content:space-between;
+    align-items: center;
+    height: 8%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.appname {
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-left: 10px;
+}
+.timeBlock {
+    font-size: 1.3em;
+    letter-spacing:2px;
+}
+.toggleLight {
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80px;
+    height:30%px;
+    border-radius: 40px;
+    transform: scale(1.6);
+}
+
+.toggleLight .child {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.child:hover
+{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.day .darkMode
+{
+    width: 80%;
+}
+.night .dayMode
+{
+    width: 100%;
+    border-radius: 100%;
+}
+
+.dateBlock {
+    font-size: 1.15em;
+}
+.Links {
+    border: 1px solid var(--border-color);
+    border-bottom: 0px;
+    border-top: 0px;
+    width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+.Links .LinksHeader {
+    height: 40%;
+    text-align: center;
+    flex: 4;
+    letter-spacing: 3px;
+}
+.Links .LinksIcons {
+    height: 60%;
+    flex: 8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+}
+
+.LinksIcons .github{
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+
+}
+.github:hover {
+    transform: scale(1.1);
+}
+.LinksIcons .linkedIn{
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+
+}
+.linkedIn:hover {
+    transform: scale(1.1);
+}
+.LinksIcons .discord{
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+    position: relative;
+    left: 5px;
+
+}
+.discord:hover {
+    transform: scale(1.1);
+}
+
+.baseBody {
+    height: 90%;
+    min-height: 1000px; 
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    flex: 1;
+    padding:  32px 17px;
+}
+
+.baseBody .leftCard {
+    background: rgba(255, 255, 255, 0.1); 
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    /* color: white; */
+    width: 28%;
+    min-width: 300px;
+    height: 100%;
+    border-radius: 35px;
+    padding: 20px 20px;
+    gap: 10px;
+}
+.leftCard .upperChild {
+    height: 55%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid var(--bg-color); */
+}
+#map {
+    opacity: 0.9;
+    filter: brightness(0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+.upperChild .tempCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.01); 
+    border: 1px solid none;
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    width: 95%;
+    height: 98%;
+    padding:20px;
+    border-radius: 35px;
+}
+
+.tempCard .temp{
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 20px;
+    top: 20px;
+    width: 250px;
+    height: 60%;
+    font-weight:200;
+    letter-spacing: 5px;
+    font-size: 7em;
+}
+.tempCard .highLow{
+    display: flex;
+    position: relative;
+    top: 30px;
+    left: 20px;
+    gap: 8px;
+    flex-direction: column;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+}
+.highLow .high{
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2); 
+     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid none;
+    backdrop-filter: blur(10px);
+    height: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+.highLow .low{
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+     background: rgba(255, 255, 255, 0.2); 
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid none;
+    backdrop-filter: blur(10px);
+    height: 25px;
+    border-radius: 8px;
+    text-align: center;
+}
+.leftCard .lowerChild {
+    margin-top: 10px;
+    flex-grow: 1;
+    /* border: 1px solid var(--bg-color); */
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 6px;
+}
+.lowerChild form{
+    display: flex;
+    flex: 1;
+    height: 40px;
+}
+form input{
+    width: 100%;
+    height: 100%;
+    padding-left: 14px;
+    font-size: 1.2em;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+   background: rgba(255, 255, 255, 0.1); /* light transparent white */
+   border: 1px solid rgba(255, 255, 255, 0.3);
+   color: black;                         /* text color */
+   padding: 10px 15px;
+   font-size: 1.2em;
+   outline: none;
+   backdrop-filter: blur(10px);          
+   transition: 0.3s ease;                
+}
+form input::placeholder {
+    color: black;
+}
+form button{
+    width: 16%;
+    height: 100%;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    border: 0;
+    background-color: grey;
+}
+form button:hover {
+    cursor: pointer;
+}
+.lowerChild #map{
+    flex: 8;
+    border: 1px solid var(--border-color);
+    margin-top: 10px;
+    border-radius: 35px;
+}
+.middleCard {
+    width: 50%;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 2em;
+}
+
+.middleCard .upperChild{
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 40px;
+    gap: 8px;
+    display: flex;
+   background: rgba(255, 255, 255, 0.1); /* light transparent white */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    flex-direction: column;
+    flex: 1;
+}
+.upperChild .upperLine{
+    letter-spacing: 5px;
+    font-size: 3em;
+}
+.upperChild .lowerLine{
+    display: flex;
+    justify-content: space-between;
+}
+.lowerLine .leftPart{
+    font-size: 1.4em;
+    letter-spacing: 2px;
+}
+.lowerLine .rightPart{
+    font-size: 1.4em;
+}
+
+#tempChart {
+    background: rgba(255, 255, 255, 0.01); /* light transparent white */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(0.5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    
+}
+.rightCard {
+    padding: 10px 5px;
+    /* border: 1px solid var(--bg-color); */
+    width: 18%;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+}
+.rightCard .upperChild{
+    /* border: 2px solid var(--bg-color);   */
+    flex: 1.6;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2px;
+}
+.rightCard .lowerChild{
+    background: rgba(255, 255, 255, 0.2); /* light transparent white */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0.5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.lowerChild .humidity{
+    flex: 2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+    font-size: 2.5em;
+}   
+.humidity img{
+    position: relative;
+    width: 20%;
+    margin-right: 20px;
+}
+.lowerChild .recentSearches{
+    display: flex;
+    flex-direction: column;
+    flex: 10;
+}
+.recentSearches .loading {
+    width: 100%;
+    height: 83%;
+    background: rgba(255, 255, 255, 0.75); /* light transparent white */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10000px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: fixed;
+    z-index: 1111;
+    left: 0px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    letter-spacing: 3px;
+}
+
+.recentSearches .children{
+    list-style-type:none;
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+.recentSearches .cityName{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.05em;
+    letter-spacing: 2px;
+}
+.recentSearches .temperature{
+    flex: 1;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#bg-cover{
+    background-color: #00000025;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+
+.displayNone {
+    display: none;
+}
