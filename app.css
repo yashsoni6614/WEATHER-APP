@@ -39,9 +39,9 @@ body {
     flex-direction: column;
     height: 100vh;
     min-height: 900px;
+    min-width: 1200px;
     font-family: 'Poppins', 'Inter', sans-serif;
     transition: all 1s ease;
-    overflow-x: hidden;
 
 }
 
@@ -239,7 +239,7 @@ body .black {
     height: 60%;
     font-weight:200;
     letter-spacing: 5px;
-    font-size: 5em;
+    font-size: 5em
 }
 .tempCard .highLow{
     display: flex;
@@ -248,8 +248,8 @@ body .black {
     gap: 8px;
     flex-direction: column;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 4em;
+    height: 5em;
 }
 .highLow .high{
     display: flex;
@@ -261,7 +261,7 @@ body .black {
     backdrop-filter: blur(10px);
     height: 25px;
     border-radius: 8px;
-    font-size: 0.7em;
+    font-size: 0.8em;
     text-align: center;
 }
 .highLow .low{
@@ -274,7 +274,7 @@ body .black {
     backdrop-filter: blur(10px);
     height: 25px;
     border-radius: 8px;
-    font-size: 0.7em;
+    font-size: 0.8em;
     text-align: center;
 }
 .leftCard .lowerChild {
@@ -469,8 +469,8 @@ form button:hover {
 
 #bg-cover{
     background-color: #00000025;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     z-index: -1;
     position: fixed;
     top: 0;
@@ -482,6 +482,36 @@ form button:hover {
     display: none;
 }
 
+@media (max-width :2100px) {
+ 
+    .highLow .child{
+        width: 4rem;
+        font-size: 0.8rem;
+        position: relative;
+        bottom: 13px;
+    }
+ } 
+
+ @media (max-width :1500px) {
+    .tempCard .temp{
+        font-size: 5rem;
+        font-weight: 200;
+    }
+    .highLow .child{
+        width: 4rem;
+        height: auto;
+        font-size: 0.8rem;
+        position: relative;
+        bottom: 13px;
+    }
+ } 
 
 
-/* @media (max-width :) */
+  @media (max-width :1200px) {
+
+    .highLow .child{
+        position: relative;
+        right: 15px;
+    }
+ } 
+ 
