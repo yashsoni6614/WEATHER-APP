@@ -84,7 +84,6 @@ function loadVideo(videoPath) {
 
 // })
 
-
 // i have to make the map object first here 
 const map = L.map('map');
 map.setView([22, 78], 4);//default position of india ig
@@ -95,6 +94,10 @@ const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', 
 })
 //this gonna add the tiles for the map in here 
 tiles.addTo(map);
+
+
+
+
 
 //now i have to add the marker and the circle for when we are having the position we can mark on it exactly 
 let marker;
