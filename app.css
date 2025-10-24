@@ -484,31 +484,39 @@ form button:hover {
 
 @media (max-width :2100px) {
  
-    .highLow .child{
-        width: 4rem;
-        font-size: 0.8rem;
-        position: relative;
-        bottom: 13px;
-    }
- } 
-
- @media (max-width :1500px) {
-    .tempCard .temp{
-        font-size: 5rem;
+        .tempCard .temp{
+        font-size: 5.5vw;
         font-weight: 200;
     }
     .highLow .child{
-        width: 4rem;
-        height: auto;
+        width: 4vw;
         font-size: 0.8rem;
         position: relative;
-        bottom: 13px;
+        bottom: 10px;
+    }
+ } 
+
+ @media (max-width :1550px) {
+    .tempCard .temp{
+        font-size: 5vw;
+        font-weight: 200;
+    }
+    .highLow .child{
+        width: 4vw;
+        height: auto;
+        font-size: 0.8vw;
+        position: relative;
+        bottom: 10px;
+        
     }
  } 
 
 
-  @media (max-width :1200px) {
-
+  @media (max-width :1400px) {
+        .tempCard .temp{
+        font-size: 4.5vw;
+        font-weight: 200;
+    }
     .highLow .child{
         position: relative;
         right: 15px;
